@@ -1,0 +1,1 @@
+print("Hi Global AI Hub")

@@ -1,0 +1,71 @@
+#Collect all the components of your program to run it in a for loop
+#Import the random library
+import random
+
+#Add the code to create a list containing the three actions of the game.
+list = ['rock', 'paper', 'scissors']
+
+#Add the code to set the scores of players to 0
+player1_score = 0
+player2_score = 0
+
+#Add the code to ask the user how many rounds they want to play
+roundCount = input("How many rounds do you want to play?: ")
+
+#Write a while loop and put the game inside
+a=1
+while a <= int(roundCount):
+  print("-- " + str(a) + ". game --")
+
+  #Add the code to select a random action for each player
+  player1_choice = random.choice(list)
+  player2_choice = random.choice(list)
+
+  #Add the code to print the players choices
+  print(f"player1's choice: {player1_choice}")
+  print(f"player2's choice: {player2_choice}")
+
+  #Add the tie condition
+  if(player1_choice == player2_choice):
+    print("Tie! Both players chose the same action.")
+
+  #Add the remaining condition
+  elif(player1_choice == 'rock'):
+    if(player2_choice == 'scissors'):
+      print("player1 won!")
+      player1_score += 1
+    else:
+      print("player2 won!")
+      player2_score += 1
+  elif(player1_choice == 'scissors'):
+    if(player2_choice == 'paper'):
+      print("player1 won!")
+      player1_score += 1
+    else:
+      print("player2 won!")
+      player2_score += 1
+  elif(player1_choice == 'paper'):
+    if(player2_choice == 'rock'):
+      print("player1 won!")
+      player1_score += 1
+    else:
+      print("player2 won!")
+      player2_score += 1
+  else:
+    print("Hata")
+
+  a += 1
+  #print the score
+
+print("-- Score Table --")
+print(f"player1's score: {player1_score}")
+print(f"player2's score: {player2_score}")
+
+print("-- Determination Of The Winner --")
+if(player1_score > player2_score):
+  print("player1 is the winner of the game!")
+elif(player2_score > player1_score):
+  print("player2 is the winner of the game!")
+elif(player1_score == player2_score):
+  print("Tie! Friendship won :)")
+
